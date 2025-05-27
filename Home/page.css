@@ -1,0 +1,57 @@
+body {
+    background-color: #cdcfc0;
+}
+
+#mainContainer {
+    display: grid;
+    height: 100vh;
+    width: auto;
+    grid-template-areas: 
+    "list timer"
+    "list timer"
+    "list timer"
+    "list timer"
+    "list settings"
+    "spotify settings"
+    "spotify settings"
+    ;
+    place-content: center;
+    column-gap:30px;
+    row-gap: 10px;
+}
+
+#mainContainer > div {
+    display: grid;
+    background-color: aqua;
+    /* clamp(min, preferred, max) */
+    font-size: clamp(1.5rem, 2vw, 5rem);
+    place-items: center;
+    padding: 10px;
+    border-style: solid;
+    border-radius: 20px;
+}
+
+.to_do_list {
+    grid-area: list;
+    width: 350px;
+    height: 350px;
+}
+
+.timer {
+    grid-area: timer;
+    width: 500px;
+    height: 280px;
+}
+
+.spotify {
+    grid-area: spotify;
+    width: 350px;
+    height: 135px;
+}
+
+.settings {
+    grid-area: settings;
+    width: 500px;
+    height: 200px;
+}
+
