@@ -5,13 +5,29 @@
     <title>Project Pomodoro</title>
 
     <link rel="stylesheet" href="page.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
+
 <body>
     <div id="mainContainer">    
-        <div class="to_do_list">To Do List</div>
+        <div class="to_do_list">
+            <div class="Tasks">   
+                <input type="text" id="input-box" placeholder="Add a task...">
+                <button onclick="addItems()">Add</button>
+            </div> 
+            <ul id="listItems">
+                <li class="completion"><img src="../Icons/wiltplant.png" class="plant wiltplant" alt="Wilted Plant">Task 1</li>
+                <li class="completion"><img src="../Icons/wiltplant.png" class="plant wiltplant" alt="Wilted Plant">Task 2</li>
+                <li class="completion"><img src="../Icons/wiltplant.png" class="plant wiltplant" alt="Wilted Plant">Task 3</li>
+            </ul>
+        </div>
         <div class="timer">Timer</div>
         <div class="spotify">Spotify</div>
         <div class="settings">Settings</div>
     </div>
+
+    <script src="page.js"></script>
 </body>
 </html>
