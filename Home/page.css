@@ -22,21 +22,86 @@ body {
 
 #mainContainer > div {
     display: grid;
-    background-color: aqua;
     /* clamp(min, preferred, max) */
     font-size: clamp(1.5rem, 2vw, 5rem);
-    place-items: center;
     padding: 10px;
     border-style: solid;
     border-radius: 20px;
 }
 
+/* Section: To-Do-List */
 .to_do_list {
+    background-color: #f1ebe5;
     grid-area: list;
     width: 350px;
     height: 350px;
+    grid-template-rows: auto 1fr;
+    outline: none;
+    border-style: none;
+    border-radius: 20px;
 }
 
+.Tasks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f1ebe5;
+    border-radius: 20px; 
+    border: 1.5px solid;
+    margin: 20px; 
+}
+
+#input-box {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    background-color: transparent;
+    width: 200px;
+    border: none;
+    outline: none;
+    margin-left: 5px;
+}
+
+.Tasks > button {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    background-color: #918151;
+    border-radius: 20px;
+    border: none;
+    width: 70px;
+    outline: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.to_do_list > ul {
+    font-size: 20px;
+    margin-top: 0;
+}
+
+ul li{
+    padding: 8px 4px 8px 5px;
+    list-style: none;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+
+ul li::before {
+    content: "";
+    position: absolute;
+    background-image: url(../Icons/wiltplant.png);
+}
+
+ul li.completion {
+    text-decoration: line-through;
+}
+
+ul li.completion::before {
+    background-image: url(../Icons/sunflower.png);
+}
+
+/* Section: Time/Stopwatch */
 .timer {
     grid-area: timer;
     width: 500px;
@@ -54,4 +119,7 @@ body {
     width: 500px;
     height: 200px;
 }
+
+
+
 
