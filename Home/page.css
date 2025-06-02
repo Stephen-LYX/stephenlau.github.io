@@ -78,8 +78,23 @@ body {
     margin-top: 0;
 }
 
+#listItems {
+    max-height: 245px;
+    padding-left: 0;
+    overflow-y: auto;
+    
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+/* for Chrome, Safari, and Opera */
+#yourElement::-webkit-scrollbar {
+    display: none; 
+}
+
 ul li{
-    padding: 8px 4px 8px 5px;
+    padding: 8px 4px 8px 45px;
     list-style: none;
     user-select: none;
     cursor: pointer;
@@ -90,7 +105,33 @@ ul li{
 ul li::before {
     content: "";
     position: absolute;
-    background-image: url(../Icons/wiltplant.png);
+    width: 18px;
+    height: 20px;
+    background-image: url(/Icons/wiltplant.png);
+    background-size: cover;
+    background-position: center;
+    top: 10px;
+    left: 20px;
+}
+
+ul li i {
+    position: absolute;
+    right: 18px;     /* distance from the right edge */
+    top: 50%;        /* vertical center */
+    transform: translateY(-50%);  /* perfect vertical centering */
+    font-size: 16px;
+    cursor: pointer;
+    padding: 6px 8px 6px 8px;
+    border-radius: 50%;
+}
+
+ul li i.fa-solid.fa-xmark::before {
+    width: 50px;
+    height: 50px;
+}
+
+ul li i:hover {
+    background-color: #c5c1bb
 }
 
 ul li.completion {
@@ -98,7 +139,7 @@ ul li.completion {
 }
 
 ul li.completion::before {
-    background-image: url(../Icons/sunflower.png);
+    background-image: url(/Icons/sunflower.png);
 }
 
 /* Section: Time/Stopwatch */
