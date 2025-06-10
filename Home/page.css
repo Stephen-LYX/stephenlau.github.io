@@ -4,7 +4,7 @@ body {
 
 #mainContainer {
     display: grid;
-    height: 100vh;
+    height: 600px;
     width: auto;
     grid-template-areas: 
     "list timer"
@@ -144,11 +144,78 @@ ul li.completion::before {
 
 /* Section: Time/Stopwatch */
 .timer {
+    display: flex;
+    flex-direction: column;
     grid-area: timer;
     width: 500px;
-    height: 280px;
+    height: 300px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
 }
 
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    max-width: 500px;
+    height: 100px;
+    width: 100%;
+}
+
+.slide {
+    font-size: 50px;
+    min-width: 500px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonClick {
+    display: flex;
+    max-width: 500px;
+    max-height: 50px;
+    column-gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    border-radius: 10px;
+    width: 90px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.startPauseBtn {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    column-gap: 10px;
+}
+
+#startButton, #pauseButton {
+    border-style: solid;
+    height: 65px;
+    width: 75px;
+}
+
+#startButton:hover, #pauseButton:hover, .buttonClick > button:hover{
+    transform: scale(1.05);
+}
+
+#startButton:active, #pauseButton:active, .buttonClick > button:active {
+    transform:scale(0.95);
+}
+
+#pomodoro.slide, #shortBreak.slide {
+    font-size: 100px;
+}
+
+/* Spotify */
 .spotify {
     grid-area: spotify;
     width: 350px;
@@ -162,5 +229,22 @@ ul li.completion::before {
 }
 
 
+@media only screen and (max-width: 920px) {
+  #mainContainer {
+    min-height: 1100px;
+    grid-template-areas: 
+      "list"
+      "timer"
+      "settings"
+      "spotify";
+    grid-template-columns: 1fr;
+  }
 
-
+  .to_do_list,
+  .timer,
+  .settings,
+  .spotify {
+    width: 90%;
+    margin: 0 auto;
+  }
+}

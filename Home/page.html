@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <title>Project Pomodoro</title>
@@ -23,7 +23,41 @@
                 <li>Task 3</li> -->
             </ul>
         </div>
-        <div class="timer">Timer</div>
+
+        <!--Section 2 --- Pomodoro Clock/Break Timer/Clock-->
+        <div class="timer">
+            <div class="slider" id="slider">
+                <div class="slide" id="clock">
+                    <h1 id="digitalClock">--:-- --</h1>
+                </div>
+
+                <div class="slide" >
+                    <h1 id="pomodoro"></h1>
+                </div>
+
+                <div class="slide">
+                    <h1 id="shortBreak"></h1>
+                </div>
+
+                <div class="slide">
+                    <h1 id="longBreak"></h1>
+                </div>
+            </div>
+
+            <div class="buttonClick">
+                <button data-index="0">Clock</button>
+                <button data-index="1">Pomodoro</button>
+                <button data-index="2">Short Break</button>
+                <button data-index="3">Long Break</button>
+            </div>
+
+            <div class="startPauseBtn">
+                <button id="startButton" onclick="startBtn">Start</button> 
+                <button id="pauseButton" onclick="pauseBtn">Pause</button>           
+            </div>
+
+        </div>
+
         <div class="spotify">Spotify</div>
         <div class="settings">Settings</div>
     </div>
